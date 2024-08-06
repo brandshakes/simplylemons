@@ -16,10 +16,10 @@ export default function SearchField() {
   }
 
   return (
-    <form onSubmit={handleSubmit} method="GET" action="/search">
+    <form onSubmit={handleSubmit} method="GET" action="/search" className="ml-auto flex-1 sm:flex-initial">
       <div className="relative">
-        <Input name="q" placeholder="Search" className="pe-10" />
-        <SearchIcon className="absolute right-3 top-1/2 size-5 -translate-y-1/2 transform text-muted-foreground" />
+        <Input name="q" placeholder="Search" className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]" />
+        <SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
       </div>
     </form>
   );
