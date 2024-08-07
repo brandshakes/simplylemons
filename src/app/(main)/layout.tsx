@@ -1,6 +1,6 @@
 import { validateRequest } from "@/auth";
 import { redirect } from "next/navigation";
-import Navbar from "./NavBar";
+import Navbar from "./Navbar";
 import SessionProvider from "./SessionProvider";
 import MenuBar from "./MenuBar";
 
@@ -15,11 +15,10 @@ export default async function Layout({
 
   return (
     <SessionProvider value={session}>
-      <div className="flex min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col bg-gray-50">
         <Navbar />
-        <div className="mx-auto flex w-full max-w-full grow gap-5 p-1">
-        <MenuBar className="sticky top-[5.25rem] hidden h-fit flex-none space-y-2 rounded-2xl bg-card px-1 py-2 shadow-sm sm:block lg:px-1 xl:w-40" />
-          {children}
+        <div className="mx-auto flex w-full max-w-none grow gap-3 p-5">
+        <MenuBar className="sticky top-[5.25rem] hidden h-fit flex-none space-y-3 rounded-2xl bg-card px-3 py-5 shadow-sm sm:block lg:px-5 xl:w-50" />          {children}
         </div>
         <MenuBar className="sticky bottom-0 flex w-full justify-center gap-5 border-t bg-card p-3 sm:hidden" />
       </div>

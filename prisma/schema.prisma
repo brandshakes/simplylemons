@@ -24,8 +24,9 @@ model User {
   googleId     String? @unique
   avatarURL    String?
   bio          String?
+  posts        Post[]
 
-  auth_session Session[]
+  sessions Session[]
   key          Key[]
 
   createdAt DateTime @default(now())
@@ -50,4 +51,15 @@ model Key {
   user            User    @relation(references: [id], fields: [user_id], onDelete: Cascade)
 
   @@index([user_id])
+}
+
+model Post {
+  id      String @id @default(cuid())
+  content String
+  userId  String
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@map("posts")
 }
