@@ -12,7 +12,7 @@ export default function Post({ post }: PostProps) {
     <article className="space-y-3 rounded-xl border bg-card p-5 shadow-sm">
       <div className="flex flex-wrap gap-3">
         <Link href={`/users/${post.user.username}`}>
-          <UserAvatar avatarUrl={post.user.avatarURL} />
+          <UserAvatar avatarUrl={post.user.avatarUrl} />
         </Link>
         <div>
           <Link
